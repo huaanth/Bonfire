@@ -32,7 +32,7 @@ export default function RootLayout({
           enableSystem={false}
           storageKey="camp-theme"
           >
-            {/* <ModalProvider/> */}
+            <ModalProvider/>
             {children}
             </ThemeProvider>
             </body>
