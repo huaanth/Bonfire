@@ -19,7 +19,7 @@ export const NavigationItem =({
     const params =useParams();
     const router = useRouter();
     const onClick = () => {
-        router.push('/servers/${id}');
+        router.push(`/servers/${id}`);
     }
 
 
@@ -29,7 +29,7 @@ export const NavigationItem =({
         align = "center"
         label= {name}>
         <button
-        onClick={() => {}}
+        onClick={onClick}
         className="group relative flex items-center">
             <div className={cn(
                 "absolute left-0 bg-primary rounded-r-full transition-all w-[4px]",
