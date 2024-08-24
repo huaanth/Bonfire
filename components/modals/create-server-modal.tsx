@@ -39,7 +39,7 @@ const formSchema = z.object({
 
     })
 
-})
+});
 
 
 export const CreateServerModal = () =>{
