@@ -46,7 +46,7 @@ export const Initalmodal = () =>{
     const router = useRouter();
 
     useEffect(() =>{
-        setIsMounted(true)
+        setIsMounted(true);
 
     },[]);
     const form = useForm({
@@ -68,7 +68,7 @@ export const Initalmodal = () =>{
             window.location.reload();
 
         } catch (error) {
-            console.log(error)
+            console.log(error);
             
         }
     }
@@ -112,7 +112,7 @@ export const Initalmodal = () =>{
                             <FormField 
                             control ={form.control}
                             name ="name"
-                            render= {({ field}) => (
+                            render= {({ field }) => (
                                 <FormItem>
                                     <FormLabel className="uppercase text-xs font-bold text-zinc-500
                                     dark: text-secondary/70">

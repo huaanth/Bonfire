@@ -1,7 +1,6 @@
 import { ServerSideBar } from "@/components/server/server-sidebar";
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
-import { RedirectToSignIn } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
@@ -32,7 +31,9 @@ const ServerIdLayout = async ({
     });
 
     if (!server){
-        return redirect("/");
+        return (
+            <div> hi</div>
+        );
     }
 
 
