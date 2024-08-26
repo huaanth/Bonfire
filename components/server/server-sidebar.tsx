@@ -6,6 +6,9 @@ import { ServerHeader } from "./server-header";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ServerSearch } from "./server-search";
 import { Hash, Mic, ShieldAlert, ShieldCheck, Video } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import { ServerSection } from "./server-section";
+import { ServerChannel } from "./server-channel";
 
 interface ServerSidebarProps{
     serverId: string;
@@ -73,7 +76,7 @@ export const ServerSideBar = async ({
                     <ServerSearch 
                     data={[
                         {
-                            label: "Text Channels",
+                            label: "Text Tents",
                             type: "channel",
                             data: textChannels?.map((channel) => ({
                                 id: channel.id,
@@ -82,7 +85,7 @@ export const ServerSideBar = async ({
                             }))
                         },
                         {
-                            label: "Voice Channels",
+                            label: "Voice Tents",
                             type: "channel",
                             data: audioChannels?.map((channel) => ({
                                 id: channel.id,
@@ -91,7 +94,7 @@ export const ServerSideBar = async ({
                             }))
                         },
                         {
-                            label: "video Channels",
+                            label: "Video Tents",
                             type: "channel",
                             data: videoChannels?.map((channel) => ({
                                 id: channel.id,
@@ -100,7 +103,7 @@ export const ServerSideBar = async ({
                             }))
                         },
                         {
-                            label: "Members",
+                            label: "Campers",
                             type: "member",
                             data: members?.map((member) => ({
                                 id: member.id,
@@ -111,6 +114,26 @@ export const ServerSideBar = async ({
                     ]}/>
 
                 </div>
+                <Separator className="bg-zinc-200 dark:bg-zinc-700 rounded-md my-2"/>
+                {!!textChannels?.length && (
+                    <div className="mb-2">
+                        <ServerSection
+                        sectionType="channels"
+                        channelType={ChannelType.TEXT}
+                        role={role}
+                        label="Text Tents"
+                        />
+                        {textChannels.map((channel) => (
+                            <ServerChannel
+                            key = {channel.id}
+                            channel ={channel}
+                            role={role}
+                            server={server}
+                            />
+                        ))}
+
+                    </div>
+                )}
 
             </ScrollArea>
         </div>

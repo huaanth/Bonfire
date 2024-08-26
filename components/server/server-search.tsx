@@ -68,7 +68,7 @@ export const ServerSearch = ({
             </kbd>
         </button>
         <CommandDialog open = {open} onOpenChange={setOpen}>
-            <CommandInput placeholder="Search all channels and members"/>
+            <CommandInput placeholder="Search all tents and campers"/>
             <CommandList>
                 <CommandEmpty>
                     No Results found
